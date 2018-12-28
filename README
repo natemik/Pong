@@ -1,0 +1,81 @@
+Name: Nathan Mikhail, Matthew Cunard
+ID #: 1544835, 1538365
+CMPUT 274 Fa17
+Final Project: Pong
+
+This program is our version of the classic game Pong. Our game was not built ontop of existing code, it was made strictly from scratch
+with the small exception stated in the Code Referenced below.
+Libraries were included however to allow utilization of the Arduino and the display.
+
+To upload:
+In the terminal, move to the directory where the Makefile and Pong.cpp file is located. Once there, ensure the Arduino is correctly
+plugged into your PC. Upload the program using the "make upload" command. If there are issues uploadin the file, reconnect and ensure
+the Arduino is plugged in and recognized. When the upload is sucessful, play may begin.
+
+To play:
+Use the Player 1 joystick to select "Single Player", or "Two Player." Once one is selected by pressing down on the Player 1
+joystick, a message will display with a brief explanation of the game. Pressing the joystick down again will begin the game. The game is
+now played until the pre-determined maximum score is reached.
+
+Paddle Contatc Locations:
+Below is a graphic showing what will happen to the y velocity of the ball based on the loaction it contacts the paddle.
+
+            -----_
+            |   |_Fastest
+            |   |_Faster
+Paddle      |   |_Fast
+Contact     |   |_*Contacting exactly in the middle (between both the "Fast" markers) will result in the ball having a y velocity of 0.
+Locations   |   |_Fast
+            |   |_Faster
+            |   |_Fastest
+            -----
+
+Code Referenced:
+*Display wiring instructions and simple graphic display (eclass)
+    Color Definitions were taken directly from the ADAfruit GFX Graphics Library Documentation
+    https://learn.adafruit.com/adafruit-gfx-graphics-library?view=all
+*Display test files (eclass)
+
+Included  Files:
+*pong.cpp
+*README
+*Makefile
+
+Accessories:
+*Arduino  Mega  Board (AMG)
+*Breadboard
+*Adafruit ILI9341 Breakout
+*10 x Male to female jumper wires (Joysticks)
+*2 x Joystick
+
+Wiring Instructions:
+*Display
+    GND <--> GND
+    Vin <--> 5V
+    3Vo <--> NOT CONNECTED
+    CLK <--> 52
+    MISO <--> 50
+    MOSI <--> 51
+    CS <--> 10
+    D/C <--> 9
+    RST <--> NOT CONNECTED
+    Lite <--> NOT CONNECTED
+    Y+ <--> A2 (analog pin)
+    X+ <--> 4  (digital pin)
+    Y- <--> 5  (digital pin)
+    X- <--> A3 (analog pin)
+    IM0 - IM3 <--> NOT CONNECTED (they expect a 3.3v signal, DON'T CONNECT!)
+    CCS <--> 6
+    CD <--> NOT CONNECTED
+*Joystick for Player 1
+    GND <--> GND
+    +5V <--> 5V
+    VRx <--> A1
+    VRy <--> A0
+    SW <--> 2 (digital pin)
+*Joystick for Player 2
+    GND <--> GND
+    +5V <--> 5V
+    VRx <--> A4
+    VRy <--> A5
+    SW <--> 3 (digital pin)
